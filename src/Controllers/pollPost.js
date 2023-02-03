@@ -13,8 +13,6 @@ export default async (req,res)=>{
     if (expireAt == null) {
         expireAt = noExpireAt.add(30, "day").format("YYYY-MM-DD HH:mm");
         console.log(expireAt)
-      } else {
-        expireAt = dayjs(expireAt).format("YYYY-MM-DD HH:mm");
       }
 
     const postPoll = {
