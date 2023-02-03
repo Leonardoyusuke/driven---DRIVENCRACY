@@ -6,18 +6,14 @@ import { pollCollection } from "../Config/dataBase.js";
 
 export default async (req,res)=>{
     console.log("entrou")
-    let {title,expireAt} = req.body
+    let {title} = req.body
     console.log(req.body)
-    let noExpireAt = dayjs().format("YYYY-MM-DD HH:mm")
+    let expireAt = dayjs().add(30,'day').format("YYYY-MM-DD HH:mm")
     
-    if (expireAt == null) {
-        expireAt = noExpireAt.add(30, "day")
-        console.log(expireAt)
-      }
 
     const postPoll = {
         title:title,
-        expireAt: noExpireAt
+        expireAt: expireAt
     }
     try {
         await pollCollection.insertOne(postPoll)
