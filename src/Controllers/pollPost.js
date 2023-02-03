@@ -8,10 +8,10 @@ export default async (req,res)=>{
     console.log("entrou")
     let {title,expireAt} = req.body
     console.log(req.body)
-    let noExpireAt = dayjs();
+    let noExpireAt = dayjs().format("YYYY-MM-DD HH:mm")
     
     if (expireAt == null) {
-        expireAt = noExpireAt.add(30, "day").format("YYYY-MM-DD HH:mm");
+        expireAt = noExpireAt.add(30, "day")
         console.log(expireAt)
       }
 
