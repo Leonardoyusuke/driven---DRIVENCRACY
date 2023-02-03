@@ -9,7 +9,7 @@ const pollRoutes = Router()
 
 pollRoutes.post("/poll",pollPost)
 pollRoutes.get("/poll",pollGet)
-pollRoutes.get("/poll/:id/choice",pollGetVote)
+pollRoutes.post("/poll/:id/choice",pollGetVote)
 pollRoutes.get("/poll/:id/result",pollGetResult)
 
 export{ pollRoutes }
