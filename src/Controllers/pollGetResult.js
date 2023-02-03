@@ -14,7 +14,10 @@ export default async (req, res) => {
       const poll = await pollCollection.findOne({id:id})
       
       res.send({...poll,
-        result:{title: winningChoice}})
+        result:{title: winningChoice,
+        votes:voteCounts}
+    
+    })
 
     } catch (error) {
     res.send(error)
