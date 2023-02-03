@@ -10,7 +10,7 @@ export default async (req,res)=>{
     console.log(req.body)
     
     if (expireAt == null) {
-        noExpireAt = dayjs().format("YYYY-MM-DD HH:mm")
+        const noExpireAt = dayjs().format("YYYY-MM-DD HH:mm")
         expireAt = noExpireAt.add(30, "day")
         console.log(expireAt)
       } else {
