@@ -8,12 +8,9 @@ export default async (req,res)=>{
     console.log("entrou")
     const {title,expireAt} = req.body
     console.log(req.body)
-
-    if (!expireAt) {
-        expireAt = dayjs().add(30, "day").format("YYYY-MM-DD HH:mm");
-      } else {
-        expireAt = dayjs(expireAt).format("YYYY-MM-DD HH:mm");
-      }
+    
+    if (expireAt === null) {
+        expireAt = dayjs().add(30, "day").format("YYYY-MM-DD HH:mm")}
 
     const postPoll = {
         title:title,
