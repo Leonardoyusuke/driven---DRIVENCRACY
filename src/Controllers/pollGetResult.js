@@ -1,6 +1,7 @@
-import { choiceCollection, pollCollection } from "../Config/dataBase";
+import { choiceCollection } from "../Config/dataBase.js";
+import { pollCollection } from "../Config/dataBase.js";
 
-export async function countVotes(req, res) {
+export default async (req, res) => {
     const id = req.params.id;
   
     try {
