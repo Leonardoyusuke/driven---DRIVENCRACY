@@ -10,7 +10,8 @@ export default async (req,res)=>{
     console.log(req.body)
     
     if (expireAt == null) {
-        expireAt = dayjs().add(30, "day").format("YYYY-MM-DD HH:mm");
+        noExpireAt = dayjs().format("YYYY-MM-DD HH:mm")
+        expireAt = noExpireAt.add(30, "day")
         console.log(expireAt)
       } else {
         expireAt = dayjs(expireAt).format("YYYY-MM-DD HH:mm");
@@ -18,7 +19,7 @@ export default async (req,res)=>{
 
     const postPoll = {
         title:title,
-        expireAt: dayjs().add(30, "day").format("YYYY-MM-DD HH:mm")
+        expireAt: noExpireAt
     }
     try {
         await pollCollection.insertOne(postPoll)
