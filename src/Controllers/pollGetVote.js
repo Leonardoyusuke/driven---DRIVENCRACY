@@ -2,11 +2,11 @@
 import { choiceCollection } from "../Config/dataBase.js"
 
 export default async (req,res)=>{
-    const pollId = req.params.id
-    console.log(pollId)
+    const voteId = req.params.id
+    console.log(voteId)
 try {
     console.log("entrou")
-    const validacao = await choiceCollection.findOne({pollId:pollId})
+    const validacao = await choiceCollection.findOne({_id:voteId})
     console.log(validacao,"validacao")
     if(!validacao){
        return res.sendStatus(404)
