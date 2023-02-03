@@ -7,7 +7,7 @@ export default async (req,res)=>{
 try {
     console.log("entrou")
     const validacao = await choiceCollection.findOne({pollId:pollId})
-    console.log(validacao)
+    console.log(validacao,"validacao")
     if(!validacao){
        return res.sendStatus(404)
     }
