@@ -13,8 +13,8 @@ export default async (req, res) => {
       const winningChoice = choices[winningChoiceIndex];
       const poll = await pollCollection.findOne({id:id})
       
-      res.send({...poll,
-        result:{title: winningChoice,
+      res.send({title: winningChoice,
+        result:{
         votes:voteCounts}
     
     })
