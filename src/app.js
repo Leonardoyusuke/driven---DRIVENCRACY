@@ -6,11 +6,11 @@ import {choiceRoutes} from "./Routers/choiceRoutes.js"
 const server = express()
 server.use(express.json())
 server.use(cors())
-const PORT = 5001
+const PORT = process.env.PORT 
 
 
 server.use([pollRoutes,choiceRoutes])
 
-server.listen(process.env.PORT, () => {
+server.listen(PORT, () => {
     console.log(`server on port ${process.env.PORT}`)
   })
