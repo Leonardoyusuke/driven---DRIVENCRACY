@@ -11,6 +11,6 @@ const PORT = 5001
 
 server.use([pollRoutes,choiceRoutes])
 
-server.listen(PORT, () => {
-    console.log(`server on port ${PORT}`)
+server.listen(process.env.PORT, () => {
+    console.log(`server on port ${process.env.PORT}`)
   })
