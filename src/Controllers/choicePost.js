@@ -10,10 +10,9 @@ export default async (req,res) => {
         const validacaoId = await pollCollection.find({_id:pollId})
         const validacaoTitle = await choiceCollection.find({pollId , title})
        console.log(validacaoTitle,"titulo")
-        if(!validacaoId){
-                res.sendStatus(404)
-                return
-            }
+        //if(!validacaoId){
+          //      res.sendStatus(404)
+        //    return  }
        if(validacaoTitle){
        res.sendStatus(409)
         return
