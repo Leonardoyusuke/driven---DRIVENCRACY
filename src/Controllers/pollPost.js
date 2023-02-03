@@ -8,9 +8,9 @@ export default async (req,res)=>{
     console.log("entrou")
     const {title,expireAt} = req.body
     console.log(req.body)
+    const noExpireAt = dayjs();
     
     if (expireAt == null) {
-        const noExpireAt = dayjs();
         expireAt = noExpireAt.add(30, "day").format("YYYY-MM-DD HH:mm");
         console.log(expireAt)
       } else {
