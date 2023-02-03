@@ -8,20 +8,10 @@ export default async (req,res)=>{
     console.log("entrou")
     const {title,expireAt} = req.body
     console.log(req.body)
-    //arrumar o validate
-    //const validation = titleSchema.validate(title, {abortEarly:false})
-    //console.log(validation.error)
-    //if(validation.error){
-    //    res.sendStatus(422)
-      //  return }
-    if(expireAt === null ){
-        const currentDate = dayjs();
-        const futureDate = currentDate.add(30, 'day');
-        expireAt = futureDate.format("YYYY-MM-DD HH:mm")
-    }
+
     const postPoll = {
         title:title,
-        expireAt:expireAt
+        expireAt: dayjs().format("DD/MM/YYYY HH:mm")
     }
     try {
         await pollCollection.insertOne(postPoll)
